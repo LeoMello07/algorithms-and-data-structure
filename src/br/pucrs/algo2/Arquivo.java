@@ -12,7 +12,7 @@ import java.util.List;
 public class Arquivo {
 
 	public static List<Lista> readTestFile( String filename ) {
-		List<Lista> list = new ArrayList<Lista>();
+		List<Lista> listinha = new ArrayList<Lista>();
 		try {
 			String path = 
 					System.getProperty( "user.dir" ) 
@@ -27,7 +27,7 @@ public class Arquivo {
 			
 			while ( ( line = br.readLine() ) != null ) {
 				String[] tokens = line.split( "-" );
-				list.add( 
+				listinha.add(
 						new Lista( Long.parseLong( tokens[ 0 ] ), Long.parseLong( tokens[ 1 ] ) ) );
 			}
 			
@@ -37,10 +37,10 @@ public class Arquivo {
 			e.printStackTrace();
 		}
 		
-		return list;
+		return listinha;
 	}
 	
-	public static void writeSolutionFile( String filename, List<Lista> output ) {
+	public static void salvarSolucao( String filename, List<Lista> output ) {
 		try {
 			String path = 
 					System.getProperty( "user.dir" ) 

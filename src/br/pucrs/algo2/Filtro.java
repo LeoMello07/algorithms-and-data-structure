@@ -11,17 +11,17 @@ public class Filtro {
 		int i = listaFinal.size() - 1;
 		
 		while( i > 0 ) {
-			Lista   last = listaFinal.get( i );
-			Lista before = listaFinal.get( i - 1 );
+			Lista   ultima = listaFinal.get( i );
+			Lista antes = listaFinal.get( i - 1 );
 			
-			if ( last.getFim() < before.getFim() ) {
+			if ( ultima.getFim() < antes.getFim() ) {
 				listaFinal.remove( i );
 				i = listaFinal.size() - 1;
 				continue;
 			}
 			
-			if ( last.getInicio() < before.getFim() ) {
-				Lista novalista = new Lista( before.getInicio(), last.getFim() );
+			if ( ultima.getInicio() < antes.getFim() ) {
+				Lista novalista = new Lista( antes.getInicio(), ultima.getFim() );
 
 				listaFinal.set( i - 1 , novalista );
 				listaFinal.remove( i );
